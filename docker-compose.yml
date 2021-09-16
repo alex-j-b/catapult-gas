@@ -1,0 +1,28 @@
+version: '3'
+services:
+    mosquitto:
+        image: eclipse-mosquitto
+        volumes:
+            - mosquitto-data:/mosquitto/data
+            - mosquitto-logs:/mosquitto/logs
+            - mosquitto-conf:/mosquitto/config
+            - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+            - ./mosquitto/passwd:/mosquitto/config/passwd
+        ports:
+            - 1883:1883
+
+    sensor-receptor:
+        depends_on:
+            - mosquitto
+        volumes:
+            - sensor-receptor:/sensor-receptor/app
+        build:
+            context: ./sensor-receptor
+            dockerfile: ./Dockerfile
+        tty: true
+
+volumes:
+    mosquitto-data:
+    mosquitto-logs:
+    mosquitto-conf:
+    sensor-receptor:
