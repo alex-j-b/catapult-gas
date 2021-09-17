@@ -1,5 +1,7 @@
 version: '3'
 services:
+
+
     mosquitto:
         image: eclipse-mosquitto
         volumes:
@@ -11,15 +13,43 @@ services:
         ports:
             - 1883:1883
 
+
     sensor-receptor:
         depends_on:
             - mosquitto
+            - postgres
+            - redis
         volumes:
             - sensor-receptor:/sensor-receptor/app
         build:
             context: ./sensor-receptor
             dockerfile: ./Dockerfile
         tty: true
+        environment:
+            MQTT_HOST: mosquitto
+            REDIS_HOST: redis
+            PGUSER: ctp
+            PGHOST: postgres
+            PGPASSWORD: secret
+            PGDATABASE: iot
+            PGPORT: 5432
+
+
+    redis:
+        image: redis
+        ports:
+            - 6379:6379
+    postgres:
+        image: postgres
+        volumes:
+            - ./postgres/gas_volume.sql:/docker-entrypoint-initdb.d/gas_volume.sql
+        environment:
+            POSTGRES_USER: ctp
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: iot
+        ports:
+            - 5432:5432
+
 
 volumes:
     mosquitto-data:
