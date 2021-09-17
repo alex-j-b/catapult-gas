@@ -1,5 +1,5 @@
 const mqtt = require('mqtt');
-const config = { username: 'ctp', password: 'secret' };
+const config = { username: 'catapult', password: 'secret' };
 const mqttClient  = mqtt.connect('mqtt://mosquitto:1883', config);
 
 const sensor = require('./sensor.js');

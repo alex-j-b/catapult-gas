@@ -2,23 +2,23 @@ version: '3'
 services:
 
     redis:
-        image: redis
+        image: redis:6.2
         ports:
             - 6379:6379
 
     postgres:
-        image: postgres
+        image: postgres:13.4
         volumes:
-            - ./postgres/gas_volume.sql:/docker-entrypoint-initdb.d/gas_volume.sql
+            - ./postgres/gas_volume_2021_09.sql:/docker-entrypoint-initdb.d/gas_volume_2021_09.sql
         environment:
-            POSTGRES_USER: ctp
+            POSTGRES_USER: catapult
             POSTGRES_PASSWORD: secret
             POSTGRES_DB: iot
         ports:
             - 5432:5432
 
     mosquitto:
-        image: eclipse-mosquitto
+        image: eclipse-mosquitto:2.0
         volumes:
             - mosquitto-data:/mosquitto/data
             - mosquitto-logs:/mosquitto/logs
@@ -42,7 +42,7 @@ services:
         environment:
             MQTT_HOST: mosquitto
             REDIS_HOST: redis
-            PGUSER: ctp
+            PGUSER: catapult
             PGHOST: postgres
             PGPASSWORD: secret
             PGDATABASE: iot
@@ -57,7 +57,7 @@ services:
         volumes:
             - api:/api/app
         environment:
-            PGUSER: ctp
+            PGUSER: catapult
             PGHOST: postgres
             PGPASSWORD: secret
             PGDATABASE: iot

@@ -1,20 +1,16 @@
-const volumeSensors = { "1": 73, "2": 38, "3": 91, "4": 12, "5": 57};
-
 const sensor = (mqttClient) => {
     setInterval(() => {
-        for (const [k, v] of Object.entries(volumeSensors)) {
-            // Update last meter readings with +/- 3 liters
-            const rdm3 = Math.round(Math.random() * 6) - 3;
-            const newV = Math.abs(v + rdm3);
-            volumeSensors[k] = newV;
+        for (let i = 1; i <= 5; i++) {
+            // Random value from 1 to 3
+            const value = Math.ceil(Math.random() * 3);
 
             // Publish each sensor data every 10s
             const payload = JSON.stringify({
-                deviceId: k,
+                deviceId: i,
                 timestamp: Date.now(),
-                value: newV
+                value: value
             });
-            mqttClient.publish(`/gas/${k}/volume`, payload);
+            mqttClient.publish(`/gas/${i}/volume`, payload);
         }
     }, 10000);
 };

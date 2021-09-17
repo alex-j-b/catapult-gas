@@ -12,15 +12,15 @@ app.get('/gas10', async (req, res) => {
 
     const getLast10Days = await pgClient.query(
         `SELECT n.day, d.device_id,
-        (SELECT ROUND(AVG(value))
-            FROM gas_volume
-            WHERE timestamp >= ((SELECT timestamp FROM gas_volume ORDER BY timestamp DESC LIMIT 1) - (86400000 * n.day))
-            AND timestamp <= ((SELECT timestamp FROM gas_volume ORDER BY timestamp DESC LIMIT 1) - (86400000 * (n.day - 1)))
-            AND device_id = d.device_id
-        ) AS avg_value
-    FROM generate_series(1, 10) AS n(day), generate_series(1, 5) AS d(device_id);`
+            (SELECT SUM(liter)
+                FROM gas_volume_2021_09
+                WHERE ts >= ((extract(epoch from (NOW()::date - INTERVAL '10 DAY')) * 1000) + (86400000 * n.day))
+                AND ts <= ((extract(epoch from (NOW()::date - INTERVAL '9 DAY')) * 1000) + (86400000 * n.day))
+                AND device_id = d.device_id
+            ) AS sum_day
+        FROM generate_series(0, 9) AS n(day), generate_series(1, 5) AS d(device_id)
+        ORDER BY n.day, d.device_id`
     );
-    console.log('getLast10Days :>> ', getLast10Days.rows);
 
     res.json(getLast10Days.rows);
 })
