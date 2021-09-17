@@ -1,4 +1,4 @@
-const volumeSensors = { "1": 15, "2": 35, "3": 55, "4": 75, "5": 95};
+const volumeSensors = { "1": 73, "2": 38, "3": 91, "4": 12, "5": 57};
 
 const sensor = (mqttClient) => {
     setInterval(() => {
