@@ -65,9 +65,23 @@ services:
         ports:
             - 4000:4000
 
+    dashboard:
+        depends_on:
+            - api
+        build:
+            context: ./dashboard
+            dockerfile: ./Dockerfile
+        volumes:
+            - dashboard:/dashboard/app
+        stdin_open: true
+        ports:
+            - 3000:3000
+
+
 volumes:
     mosquitto-data:
     mosquitto-logs:
     mosquitto-conf:
     sensor-receptor:
     api:
+    dashboard:

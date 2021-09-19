@@ -1,0 +1,87 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px; font-family: 'Raleway', Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* -------------------- Header -------------------- */
+.app-header {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 80px; width: 100%;
+    background-color: purple;
+}
+.logo.small {
+    height: 40px; width: 200px;
+    margin: 0 0 0 50px;
+    background-image: url(https://uploads-ssl.webflow.com/5df9e363020103aacb595fdd/5e8ad4da4fbaea27292697a2_cata-logo-white.svg);
+    background-size: 100%;
+}
+
+h1 {
+    font-weight: 500;
+    color: white;
+}
+.title {
+
+}
+.total {
+    margin: 0 30px 0 0;
+}
+
+
+
+/* -------------------- Wrap menu left + main -------------------- */
+
+.app-wrap {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+
+
+/* -------------------- Menu left -------------------- */
+
+.app-menu {
+    display: flex; flex-direction: column;
+    width: 300px;
+    border: 1px solid;
+    background-color: #0d0d0d;
+}
+
+.app-menu a {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 40px;
+    padding: 10px 0 0 0;
+    font-size: 16px; -webkit-text-stroke: 0.15px;
+    color: white !important;
+    text-decoration: none;
+}
+
+.app-menu a:not([class*="logo-excite"]):after {
+    position: absolute; display: block;
+    left: calc(50% - 30px); bottom: 0;
+    height: 3px; width: 0;
+    content: '';
+    background: purple;
+    transition: width 0.25s ease; -webkit-transition: width 0.25s ease;
+}
+.app-menu a:hover:after {
+    width: 60px;
+}
+.app-menu a[class*="current-route"]:after {
+    width: 60px;
+}
+
+
+
+/* -------------------- Main content -------------------- */
+
+.app-main {
+    width: calc(100% - 300px);
+    padding: 0 0 30px 30px;
+    background-color: white;
+    border: 1px solid;
+}
