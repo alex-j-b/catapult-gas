@@ -1,0 +1,252 @@
+[
+    {
+        "day": 0,
+        "device_id": 1,
+        "sum_day": null
+    },
+    {
+        "day": 0,
+        "device_id": 2,
+        "sum_day": null
+    },
+    {
+        "day": 0,
+        "device_id": 3,
+        "sum_day": null
+    },
+    {
+        "day": 0,
+        "device_id": 4,
+        "sum_day": null
+    },
+    {
+        "day": 0,
+        "device_id": 5,
+        "sum_day": null
+    },
+    {
+        "day": 1,
+        "device_id": 1,
+        "sum_day": "37112"
+    },
+    {
+        "day": 1,
+        "device_id": 2,
+        "sum_day": "71454"
+    },
+    {
+        "day": 1,
+        "device_id": 3,
+        "sum_day": "95914"
+    },
+    {
+        "day": 1,
+        "device_id": 4,
+        "sum_day": "129064"
+    },
+    {
+        "day": 1,
+        "device_id": 5,
+        "sum_day": "162142"
+    },
+    {
+        "day": 2,
+        "device_id": 1,
+        "sum_day": "32184"
+    },
+    {
+        "day": 2,
+        "device_id": 2,
+        "sum_day": "63467"
+    },
+    {
+        "day": 2,
+        "device_id": 3,
+        "sum_day": "93757"
+    },
+    {
+        "day": 2,
+        "device_id": 4,
+        "sum_day": "122029"
+    },
+    {
+        "day": 2,
+        "device_id": 5,
+        "sum_day": "157041"
+    },
+    {
+        "day": 3,
+        "device_id": 1,
+        "sum_day": "29322"
+    },
+    {
+        "day": 3,
+        "device_id": 2,
+        "sum_day": "57797"
+    },
+    {
+        "day": 3,
+        "device_id": 3,
+        "sum_day": "86887"
+    },
+    {
+        "day": 3,
+        "device_id": 4,
+        "sum_day": "114831"
+    },
+    {
+        "day": 3,
+        "device_id": 5,
+        "sum_day": "143378"
+    },
+    {
+        "day": 4,
+        "device_id": 1,
+        "sum_day": "29641"
+    },
+    {
+        "day": 4,
+        "device_id": 2,
+        "sum_day": "53545"
+    },
+    {
+        "day": 4,
+        "device_id": 3,
+        "sum_day": "77890"
+    },
+    {
+        "day": 4,
+        "device_id": 4,
+        "sum_day": "112590"
+    },
+    {
+        "day": 4,
+        "device_id": 5,
+        "sum_day": "133372"
+    },
+    {
+        "day": 5,
+        "device_id": 1,
+        "sum_day": "29293"
+    },
+    {
+        "day": 5,
+        "device_id": 2,
+        "sum_day": "56537"
+    },
+    {
+        "day": 5,
+        "device_id": 3,
+        "sum_day": "78088"
+    },
+    {
+        "day": 5,
+        "device_id": 4,
+        "sum_day": "102063"
+    },
+    {
+        "day": 5,
+        "device_id": 5,
+        "sum_day": "133166"
+    },
+    {
+        "day": 6,
+        "device_id": 1,
+        "sum_day": "26757"
+    },
+    {
+        "day": 6,
+        "device_id": 2,
+        "sum_day": "51222"
+    },
+    {
+        "day": 6,
+        "device_id": 3,
+        "sum_day": "76291"
+    },
+    {
+        "day": 6,
+        "device_id": 4,
+        "sum_day": "103962"
+    },
+    {
+        "day": 6,
+        "device_id": 5,
+        "sum_day": "119875"
+    },
+    {
+        "day": 7,
+        "device_id": 1,
+        "sum_day": "26983"
+    },
+    {
+        "day": 7,
+        "device_id": 2,
+        "sum_day": "46387"
+    },
+    {
+        "day": 7,
+        "device_id": 3,
+        "sum_day": "67304"
+    },
+    {
+        "day": 7,
+        "device_id": 4,
+        "sum_day": "81983"
+    },
+    {
+        "day": 7,
+        "device_id": 5,
+        "sum_day": "111912"
+    },
+    {
+        "day": 8,
+        "device_id": 1,
+        "sum_day": "26208"
+    },
+    {
+        "day": 8,
+        "device_id": 2,
+        "sum_day": "44363"
+    },
+    {
+        "day": 8,
+        "device_id": 3,
+        "sum_day": "60394"
+    },
+    {
+        "day": 8,
+        "device_id": 4,
+        "sum_day": "77929"
+    },
+    {
+        "day": 8,
+        "device_id": 5,
+        "sum_day": "108403"
+    },
+    {
+        "day": 9,
+        "device_id": 1,
+        "sum_day": "22674"
+    },
+    {
+        "day": 9,
+        "device_id": 2,
+        "sum_day": "37874"
+    },
+    {
+        "day": 9,
+        "device_id": 3,
+        "sum_day": "55994"
+    },
+    {
+        "day": 9,
+        "device_id": 4,
+        "sum_day": "73835"
+    },
+    {
+        "day": 9,
+        "device_id": 5,
+        "sum_day": "87310"
+    }
+]
