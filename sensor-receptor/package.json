@@ -1,17 +1,17 @@
 {
-  "name": "sensor-receptor",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "async-redis": "^2.0.0",
-    "mqtt": "^4.2.8",
-    "pg": "^8.7.1"
-  }
+    "name": "sensor-receptor",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ./src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "async-redis": "^2.0.0",
+        "mqtt": "^4.2.8",
+        "pg": "^8.7.1"
+    }
 }
