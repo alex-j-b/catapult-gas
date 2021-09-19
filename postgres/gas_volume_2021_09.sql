@@ -16,7 +16,7 @@ CREATE TABLE gas_volume_2021_09 (
 INSERT INTO gas_volume_2021_09 (device_id, liter, ts)
 SELECT
     device_serie.n as device_id,
-    (((TRUNC(RANDOM() * 3) + 1) * 60) - ROUND((RANDOM()-0.5) * device_serie.n * 10)) as liter,
+    ABS(((TRUNC(RANDOM() * 3) + 1) * 60) - ROUND((RANDOM()-0.5) * device_serie.n * 50 * EXTRACT(day FROM to_timestamp(ts_serie.n / 1000)::date))) as liter,
     ts_serie.n as ts
 FROM generate_series(
     cast(extract(epoch FROM current_timestamp) * 1000 - 864000000 as BIGINT),
