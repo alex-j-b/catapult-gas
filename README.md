@@ -22,3 +22,12 @@ The React dashboard is now available at [http://localhost:3000/](http://localhos
 The MQTT client increment a counter for liters consumed by each device in a Redis DB after each publication. Every 10 min the MQTT client store the amount of gas consumed in a PostreSQL DB and reset the counter.
 
 An Express API query PostgreSQL for the daily consumption of the last 10 days, format the data and listen to [http://localhost:4000/gas10](http://localhost:4000/gas10) to send it to the React dashboard.
+
+## Run tests
+
+```
+docker exec -it catapult-gas_api_1 sh
+npm test
+docker exec -it catapult-gas_dashboard_1 sh
+npm test
+```
