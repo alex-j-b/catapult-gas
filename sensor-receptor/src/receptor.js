@@ -25,7 +25,7 @@ const receptor = async (mqttClient) => {
     })
 
     // Every 10 min -> insert new rows in gas_volume_2021_09 table
-    setTimeout(async () => {
+    setInterval(async () => {
         const keys = await redisClient.keys('*');
         const values = await redisClient.mget(keys);
 
@@ -34,10 +34,11 @@ const receptor = async (mqttClient) => {
             insertQuery += ` (${key}, ${values[i]}, cast(extract(epoch FROM current_timestamp) * 1000 as BIGINT)),`;
         });
         insertQuery = insertQuery.slice(0, -1);
-        await pgClient.query(insertQuery);
+        const resQuery = await pgClient.query(insertQuery);
+        console.log(`psql insert -> ${resQuery.rowCount}`);
 
         redisClient.flushall();
-    }, 35000);
+    }, 600000);
 };
 
 module.exports = receptor;
