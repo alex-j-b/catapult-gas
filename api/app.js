@@ -29,6 +29,6 @@ app.get('/gas10', async (req, res) => {
     res.json(parsedData);
 })
 
-app.listen(4000, () => {
-    console.log(`Listening on port ${4000}...`)
+app.listen(process.env.API_PORT, () => {
+    console.log(`Listening on port ${process.env.API_PORT}...`)
 })

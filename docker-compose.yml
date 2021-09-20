@@ -40,8 +40,11 @@ services:
             - sensor-receptor:/sensor-receptor/app
         tty: true
         environment:
-            MQTT_HOST: mosquitto
+            MQTT_HOST: mqtt://mosquitto:1883
+            MQTT_USER: catapult
+            MQTT_PASSWORD: secret
             REDIS_HOST: redis
+            REDIS_PORT: 6379
             PGUSER: catapult
             PGHOST: postgres
             PGPASSWORD: secret
@@ -57,6 +60,7 @@ services:
         volumes:
             - api:/api/app
         environment:
+            API_PORT: 4000
             PGUSER: catapult
             PGHOST: postgres
             PGPASSWORD: secret
@@ -73,7 +77,11 @@ services:
             dockerfile: ./Dockerfile
         volumes:
             - dashboard:/dashboard/app
+            - /dashboard/app/node_modules
         stdin_open: true
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+            - CI=true
         ports:
             - 3000:3000
 

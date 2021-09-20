@@ -5,8 +5,8 @@ pgClient.connect();
 // Redis client
 const redis = require('async-redis');
 const redisClient = redis.createClient({
-    host: 'redis',
-    port: 6379
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT
 });
 redisClient.flushall();
 
@@ -20,6 +20,7 @@ const receptor = async (mqttClient) => {
     // Handle devices' sensors mqtt messages
     mqttClient.on('message', (topic, payload) => {
         const { deviceId, value } = JSON.parse(payload);
+        console.log(`mqtt message -> device ${deviceId} + ${value}L`);
         redisClient.incrby(deviceId, value);
     })
 

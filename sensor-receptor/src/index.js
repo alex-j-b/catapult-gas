@@ -1,6 +1,6 @@
 const mqtt = require('mqtt');
-const config = { username: 'catapult', password: 'secret' };
-const mqttClient  = mqtt.connect('mqtt://mosquitto:1883', config);
+const config = { username: process.env.MQTT_USER, password: process.env.MQTT_PASSWORD };
+const mqttClient  = mqtt.connect(process.env.MQTT_HOST, config);
 
 const sensor = require('./sensor.js');
 const receptor = require('./receptor.js');
