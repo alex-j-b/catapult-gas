@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart tests should render chart correctly 1`] = `
+<ResponsiveLine
+  axisBottom={
+    Object {
+      "format": "%d-%m-%Y",
+      "orient": "bottom",
+      "tickPadding": 10,
+      "tickSize": 5,
+    }
+  }
+  axisLeft={
+    Object {
+      "orient": "left",
+      "tickPadding": 10,
+      "tickRotation": 0,
+      "tickSize": 5,
+    }
+  }
+  data={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "x": "19-09-2021",
+            "y": 0,
+          },
+          Object {
+            "x": "18-09-2021",
+            "y": 495686,
+          },
+          Object {
+            "x": "17-09-2021",
+            "y": 468478,
+          },
+          Object {
+            "x": "16-09-2021",
+            "y": 432215,
+          },
+          Object {
+            "x": "15-09-2021",
+            "y": 407038,
+          },
+          Object {
+            "x": "14-09-2021",
+            "y": 399147,
+          },
+          Object {
+            "x": "13-09-2021",
+            "y": 378107,
+          },
+          Object {
+            "x": "12-09-2021",
+            "y": 334569,
+          },
+          Object {
+            "x": "11-09-2021",
+            "y": 317297,
+          },
+          Object {
+            "x": "10-09-2021",
+            "y": 277687,
+          },
+        ],
+        "id": "all",
+        "total": 3510224,
+      },
+    ]
+  }
+  legends={
+    Array [
+      Object {
+        "anchor": "bottom-right",
+        "direction": "column",
+        "itemDirection": "left-to-right",
+        "itemHeight": 40,
+        "itemOpacity": 0.75,
+        "itemWidth": 50,
+        "itemsSpacing": 0,
+        "justify": false,
+        "symbolShape": "circle",
+        "symbolSize": 20,
+        "translateX": 100,
+        "translateY": 0,
+      },
+    ]
+  }
+  margin={
+    Object {
+      "bottom": 50,
+      "left": 80,
+      "right": 140,
+      "top": 60,
+    }
+  }
+  pointBorderColor={
+    Object {
+      "from": "serieColor",
+    }
+  }
+  pointBorderWidth={2}
+  pointColor={
+    Object {
+      "theme": "background",
+    }
+  }
+  pointLabelYOffset={-12}
+  pointSize={10}
+  theme={
+    Object {
+      "axis": Object {
+        "legend": Object {
+          "text": Object {
+            "fontSize": 16,
+          },
+        },
+      },
+      "fontSize": 12,
+    }
+  }
+  useMesh={true}
+  xFormat="time:%d-%m-%Y"
+  xScale={
+    Object {
+      "format": "%d-%m-%Y",
+      "type": "time",
+    }
+  }
+  yFormat=" >-.2f"
+  yScale={
+    Object {
+      "max": "auto",
+      "min": 0,
+      "reverse": false,
+      "stacked": false,
+      "type": "linear",
+    }
+  }
+/>
+`;
